@@ -1,3 +1,4 @@
+import { ImageComponent } from "./Components/Page/item/image.js";
 import { PageComponent } from "./Components/Page/page.js";
 
 class App {
@@ -5,6 +6,9 @@ class App {
     constructor(appRoot: HTMLElement){
         this.page = new PageComponent();
         this.page.attachTo(appRoot)
+
+        const image = new ImageComponent('Image Title', 'https://picsum.photos/600/300')
+        image.attachTo(appRoot,'beforeend');
     }
 }
 
