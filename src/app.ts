@@ -19,7 +19,7 @@ class App {
         const todo = new TodoComponent('Apply Sappy', "DO something")
         todo.attachTo(appRoot,'beforeend')
 
-        const video = new VideoComponent('VideoTitle', "https://www.youtube.com/embed/NBgLUCVBEuo")
+        const video = new VideoComponent('VideoTitle', "https://www.youtube.com/watch?v=jmI6_BnYons")
         video.attachTo(appRoot,'beforeend')
     }
 }

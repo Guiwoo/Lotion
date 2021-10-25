@@ -11,24 +11,21 @@ export class VideoComponent extends BasicComponent<HTMLElement>{
         
 
         const iframe = this.element.querySelector('.video__iframe')! as HTMLIFrameElement
+
         iframe.src = this.convertToEmbeddedURL(url)
 
         const titleEl = this.element.querySelector('.video__title')! as HTMLHeadingElement
         titleEl.textContent = title
     }
+    //정규표현식 Regex ? 패스워드 이메일 또는 전화번호
     private convertToEmbeddedURL(url:string) :string {
-        console.log(url)
-        // const videoId = 'k3-jg'
-        return 'eh'
+        const regExp = /^(?:https?:\/\/)?(?:www\.)?(?:(?:youtube.com\/(?:(?:watch\?v=)|(?:embed\/))([a-zA-Z0-9-_]{11}))|(?:youtu.be\/([a-zA-Z0-9-_]{11})))/
+        const match = url.match(regExp)
+        const videoId = match ? match[1] || match[2] : undefined
+        console.log(videoId)
+        if(videoId){
+            return `https://www.youtube.com/embed/${videoId}`
+        }
+        return url
     }
 }
-
-
-// <iframe 
-// width="910" 
-// height="512" 
-// src="https://www.youtube.com/embed/NBgLUCVBEuo" 
-// title="YouTube video player" 
-// frameborder="0" 
-// allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-// allowfullscreen />
