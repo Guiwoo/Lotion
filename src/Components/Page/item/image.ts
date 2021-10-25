@@ -6,7 +6,7 @@ export class ImageComponent extends BasicComponent<HTMLElement>{
                 <div calass="image__holder">
                     <img class="image__thumbnail"/>
                 </div>
-                <p class="image__title"></p>
+                <h2 class="image__title"></p>
             </section>`)
     const imageElement =this.element.querySelector(`.image__thumbnail`)! as HTMLImageElement
     imageElement.src = url
